@@ -1,0 +1,53 @@
+<html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.3/p5.min.js"></script>
+
+<script src="./data.js"></script>
+<script src="./rita.min.js"></script>
+<script>
+  var candidate = 'bernie';
+  function setup() {
+    
+    bg = loadImage('images/'+candidate+'.jpg',function(){
+        image(bg, 0, 0);
+         rm = new RiMarkov(3,true,false);
+      rm.sentenceAware();
+      rm.useSmoothing();
+      var textFn = text;
+      RiTa.loadString(candidate+'.txt',function(text){
+        rm.loadText(text);
+        results = rm.generateSentences(2);
+        var text=results[0];
+        for (var i=1;i<results.length;i++){
+          text+=' '+results[i];
+        }
+      textFn(text,80,80,650,500);
+      });
+      console.log(rm);
+      
+      document.getElementById('defaultCanvas').style.width="100%";
+      document.getElementById('defaultCanvas').style.height="auto";
+    });
+      createCanvas(1100,619);
+      textSize(50);
+      textStyle(BOLD);
+      strokeWeight(2);
+     noLoop();
+     background(50);
+     background(bg);
+    }
+  //   function draw(){
+  //     background(50);
+  //     rm = new RiMarkov(3,true,false);
+  //     rm.sentenceAware();
+  //     rm.useSmoothing();
+  //     rm.loadText(trump);
+  //     console.log(rm);
+  //     results = rm.generateSentences(2);
+  //     text(results);
+  //     text(results,0,20,500,500)
+  // }
+
+</script>
+
+<html>
