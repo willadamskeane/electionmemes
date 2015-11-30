@@ -32,6 +32,8 @@ function draw(candidateIndex) {
       var bg = loadImage('candidates/' + candidate.shortName + '/' + candidateImage.fileName, function () {
             image(bg, 0, 0);
             generateCaption(candidate, function (caption) {
+                  	window.history.pushState("object or string", "Title", "/electionmemes/index.html#"+btoa(encodeURIComponent(caption)));
+                        
                   console.log(candidateImage);
                         document.getElementById('defaultCanvas0').style.visibility = "";
                   text(caption, candidateImage.captionX, candidateImage.captionY, candidateImage.captionWidth, candidateImage.captionHeight);

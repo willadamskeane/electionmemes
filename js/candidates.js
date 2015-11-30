@@ -28,5 +28,19 @@ var candidates = [
 				textAlign:'right'
 			}
 		]
+	},{
+		name:'Hillary Clinton',
+		shortName: 'clinton',
+		party:'Democrate',
+		images: [
+			{
+				fileName: 'clinton1.jpg',
+				captionX:400,
+				captionY:80,
+				captionWidth:600,
+				captionHeight:1000,
+				textAlign:'right'
+			}
+		]
 	}
 ]
