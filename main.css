@@ -1,0 +1,49 @@
+#quote {
+	width:600px;
+	height:600px;
+	text-align:center;
+	margin:auto;
+}
+
+.col-left {
+	text-align:right;
+}
+
+.col-right {
+	display:block;
+}
+
+.col-middle {
+	text-align: center;
+}
+
+.share-button-box {
+	text-align:center;
+	border-bottom:1px solid #474763;
+	color:#fff;
+	padding:10px;
+}
+
+.share-button-box i {
+	font-size:32px;
+	display:block;
+}
+
+body {
+	background:#242440 !important;
+	
+}
+
+.container {
+	padding-top:20px;
+	text-align:center;
+	color:#fff;
+}
+
+.btn {
+	margin-top:10px;
+}
+
+#defaultCanvas0 {
+	border-radius:10px;
+}

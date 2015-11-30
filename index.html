@@ -1,199 +1,73 @@
 <html>
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="lib/bootstrap.min.css">
+<link rel="stylesheet" href="lib/animate.css">
+<link rel="stylesheet" href="lib/font-awesome.min.css">
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.3/p5.min.js"></script>
-<script src="./main.js"></script>
-<script src="./data.js"></script>
-<script src="./rita.min.js"></script>
+<script src="lib/p5.min.js"></script>
+<script src="lib/rita.min.js"></script>
+<script src="js/candidates.js"></script>
+<script src="js/social.js"></script>
+<script src="js/nlp.js"></script>
+<script src="js/ui.js"></script>
+
 <script>
-  if ( XMLHttpRequest.prototype.sendAsBinary === undefined ) {
-    XMLHttpRequest.prototype.sendAsBinary = function(string) {
-        var bytes = Array.prototype.map.call(string, function(c) {
-            return c.charCodeAt(0) & 0xff;
-        });
-        this.send(new Uint8Array(bytes).buffer);
-    };
-};
-
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-
-window.fbAsyncInit = function() {
-    FB.init({
-      appId  : "1684804195065104",
-      status : true, 
-      cookie : true, 
-      xfbml  : true  // parse XFBML
-    });
-};
-
-
-  function setup(candidateIndex) {
-    if (!candidateIndex)
-      candidateIndex=Math.floor(Math.random() * 2);
-    console.log(candidateIndex);
-    candidate = candidates[candidateIndex];
-    candidateImage = candidate.images[Math.floor(Math.random() * candidate.images.length)];
-    bg = loadImage('candidates/'+candidate.shortName+'/'+candidateImage.fileName,function(){
-        image(bg, 0, 0);
-         rm = new RiMarkov(3,true,false);
-      rm.sentenceAware();
-      rm.useSmoothing(true);
-      var textFn = text;
-      RiTa.loadString('candidates/'+candidate.shortName+'/input.txt',function(text){
-        rm.loadText(text);
-        results = rm.generateSentences(2);
-        var text=results[0];
-        for (var i=1;i<results.length;i++){
-          text+=' '+results[i];
-        }
-      textFn(text,candidateImage.captionX,candidateImage.captionY,candidateImage.captionWidth,candidateImage.captionHeight);
-      });
-      console.log(rm);
-      
-      
-    });
-      var myCanvas = createCanvas(1080,1080);
-      document.getElementById('defaultCanvas').style.width="100%";
-      document.getElementById('defaultCanvas').style.height="auto";
-      myCanvas.parent('quote');
-      textSize(50);
-      textStyle(BOLD);
-      textAlign((candidateImage.textAlign=='left'?LEFT:RIGHT));
-      strokeWeight(2);
-     noLoop();
-     background(50);
-     background(bg);
-    }
-//     function postImageToFacebook( authToken, filename, mimeType, imageData, message )
-// {
-//     // this is the multipart/form-data boundary we'll use
-//     var boundary = '----ThisIsTheBoundary1234567890';   
-//     // let's encode our image file, which is contained in the var
-//     var formData = '--' + boundary + '\r\n'
-//     formData += 'Content-Disposition: form-data; name="source"; filename="' + filename + '"\r\n';
-//     formData += 'Content-Type: ' + mimeType + '\r\n\r\n';
-//     for ( var i = 0; i < imageData.length; ++i )
-//     {
-//         formData += String.fromCharCode( imageData[ i ] & 0xff );
-//     }
-//     formData += '\r\n';
-//     formData += '--' + boundary + '\r\n';
-//     formData += 'Content-Disposition: form-data; name="message"\r\n\r\n';
-//     formData += message + '\r\n'
-//     formData += '--' + boundary + '--\r\n';
-    
-//     var xhr = new XMLHttpRequest();
-//     xhr.open( 'POST', 'https://graph.facebook.com/me/photos?access_token=' + authToken, true );
-//     xhr.onload = xhr.onerror = function() {
-//         console.log( xhr.responseText );
-//     };
-//     xhr.setRequestHeader( "Content-Type", "multipart/form-data; boundary=" + boundary );
-//     xhr.sendAsBinary( formData );
-// };
-
-    function postCanvasToFacebook() {
-      var canvas = document.getElementById('defaultCanvas');
-      console.log(canvas);
-      var data = canvas.toDataURL("image/png");
-	var encodedPng = data.substring(data.indexOf(',') + 1, data.length);
-	var decodedPng = atob(encodedPng);
-  console.log('hey');
-	FB.getLoginStatus(function(response) {
-    console.log('response',response);
-	  if (response.status === "connected") {	
-		postImageToFacebook(response.authResponse.accessToken, "heroesgenerator", "image/png", decodedPng, "www.heroesgenerator.com");
-	  } else if (response.status === "not_authorized") {
-		 FB.login(function(response) {
-			postImageToFacebook(response.authResponse.accessToken, "heroesgenerator", "image/png", decodedPng, "www.heroesgenerator.com");
-		 }, {scope: "publish_actions"});
-	  } else {
-		 FB.login(function(response)  { 
-			postImageToFacebook(response.authResponse.accessToken, "heroesgenerator", "image/png", decodedPng, "www.heroesgenerator.com");
-		 }, {scope: "publish_actions"});
-	  }
-	 });
-      }
-  //   function draw(){
-  //     background(50);
-  //     rm = new RiMarkov(3,true,false);
-  //     rm.sentenceAware();
-  //     rm.useSmoothing();
-  //     rm.loadText(trump);
-  //     console.log(rm);
-  //     results = rm.generateSentences(2);
-  //     text(results);
-  //     text(results,0,20,500,500)
-  // }
-  
-  function postImageToFacebook(authToken,na1,na2,na3,na4) {
-    var canvas = document.getElementById("defaultCanvas");
-    var imageData = canvas.toDataURL("image/png");
-    try {
-        blob = dataURItoBlob(imageData);
-    } catch (e) {
-        console.log(e);
-    }
-    var fd = new FormData();
-    fd.append("access_token", authToken);
-    fd.append("source", blob);
-    fd.append("message", "Photo Text");
-    try {
-        $.ajax({
-            url: "https://graph.facebook.com/me/photos?access_token=" + authToken,
-            type: "POST",
-            data: fd,
-            processData: false,
-            contentType: false,
-            cache: false,
-            success: function (data) {
-                console.log("success " + data);
-                $("#poster").html("Posted Canvas Successfully");
-            },
-            error: function (shr, status, data) {
-                console.log("error " + data + " Status " + shr.status);
-            },
-            complete: function () {
-                console.log("Posted to facebook");
-            }
-        });
-
-    } catch (e) {
-        console.log(e);
-    }
-}
-
-// Convert a data URI to blob
-function dataURItoBlob(dataURI) {
-    var byteString = atob(dataURI.split(',')[1]);
-    var ab = new ArrayBuffer(byteString.length);
-    var ia = new Uint8Array(ab);
-    for (var i = 0; i < byteString.length; i++) {
-        ia[i] = byteString.charCodeAt(i);
-    }
-    return new Blob([ab], {
-        type: 'image/png'
-    });
-}
+  // Convert a data URI to blob
 
 </script>
+
 <body>
   <div class="container">
-  
-<center>
-<div class="img-responsive" id="quote" style="width:600px;height:auto">
-</div>
-<button onclick="setup()" style="width:600px;height:40px">New Image</button>
-</center>
-<!--<button onclick="postCanvasToFacebook()">Submit</button>-->
+    <h3>Candidate Quote</h3>
+    <div class="row">
+      <div class="col-sm-2 col-left">
+         <div class="candidate-button">
+          Bush
+        </div>
+        <div class="candidate-button">
+          Carson
+        </div>
+        <div class="candidate-button">
+          Clinton
+        </div>
+        <div class="candidate-button">
+          Cruz
+        </div>
+        <div class="candidate-button">
+          Sanders
+        </div>
+        <div class="candidate-button">
+          Trump
+        </div>
+      </div>
+      <div class="col-sm-8 col-middle">
+        <div class="img-responsive" id="quote" style="width:600px;height:auto">
+        </div>
+        <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px">New Quote</button>
+        </center>
+      </div>
+      <div class="col-sm-2 col-right">
+        <div class="share-button-box">
+          <i class="fa fa-facebook-official"></i>
+          Share
+        </div>
+        <div class="share-button-box">
+          <i class="fa fa-twitter-square"></i>
+          Tweet
+        </div>
+        <div class="share-button-box">
+          Imgur
+        </div>
+        <div class="share-button-box">
+           <i class="fa fa-download"></i>
+          Jpeg
+        </div>
+      </div>
+    </div>
+    <!--<button onclick="postCanvasToFacebook()">Submit</button>-->
 
-</div>
+  </div>
 </body>
 
 
