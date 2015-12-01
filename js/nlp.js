@@ -37,7 +37,7 @@ function generateCaption(candidate, callback) {
 		var text = '';
 		for (var i = 0; i < results.length; i++) {
 			text += results[i];
-			if (i<results.length){
+			if (i<results.length-1){
 				text+=' ';
 			}
 		}

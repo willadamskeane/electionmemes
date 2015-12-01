@@ -95,3 +95,7 @@ function dataURItoBlob(dataURI) {
         type: 'image/png'
     });
 }
+
+function downloadCanvas() {
+    save('trump.jpg');
+}

@@ -39,15 +39,33 @@
 	
 }
 
-.logo {
-	width:250px;
-	height:auto;
+.header {
+	padding-bottom:10px;
 }
+
+.logo {
+	height:100px;
+	width:auto;
+}
+
+.candidates {
+	text-align:center;
+	padding-top:10px;
+}
+
+@media(min-width:992px){
+		.candidates {
+			padding-top:0px;
+			text-align:right;
+		}
+	}
 
 .candidate-button {
 	padding:10px;
 	text-align:center;
-	border-bottom:1px solid #474763;
+	display:inline-block;
+	cursor:pointer !important;
+	font-family:chunkFive;
 }
 
 .candidate-button:last-child {
@@ -60,18 +78,39 @@
 	height:50px;
 	border-radius:50%;
 	display:block;
-	margin:auto;
+	-webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5);
+	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5);
+	border:3px solid #00519a;
+}
+
+.candidate-button img :active {
+	box-shadow: 0px !important;
+}
+
+.democrat {
+	border-color:#00519a;
+}
+
+.republican img {
+	border-color:#d03227 !important;
+}
+
+.btn {
+	font-family:chunkFive;
+	font-size:24px !important;
 }
 
 body {
 	background:#00519a !important;
-	background:#d03227 !important;
+	background:#99251d !important;
 }
 
 .container {
 	padding-top:20px;
 	text-align:center;
 	color:#fff;
+	max-width:970px !important;
 }
 
 .btn {
@@ -80,4 +119,9 @@ body {
 
 #defaultCanvas0 {
 	border-radius:10px;
+}
+
+@font-face {
+    font-family: chunkFive;
+    src: url(fonts/chunkfive.otf);
 }

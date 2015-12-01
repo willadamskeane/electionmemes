@@ -19,53 +19,56 @@
 
 <body>
   <div class="container">
-    <img src="img/logo_republican.png" class="logo">
-    <div class="row">
-      <div class="col-xs-2 col-left row">
-        <div class="col-xs-6">
-                <div class="candidate-button">
-          <img src="candidates/bush/bush_thumbnail.jpg">
-          Bush
-        </div>
-        <div class="candidate-button">
-          <img src="candidates/carson/carson_thumbnail.jpg">
-          Carson
-        </div>
-        <div class="candidate-button">
-          <img src="candidates/clinton/clinton_thumbnail.jpg"> Clinton
-        </div>
-        <div class="candidate-button">
-          <img src="candidates/cruz/cruz_thumbnail.jpg">
-          Cruz
-        </div>
-        </div>
-         <div class="col-xs-6">
-            <div class="candidate-button">
-          <img src="candidates/omalley/omalley_thumbnail.jpg">
-          O'Malley
-        </div>
-        <div class="candidate-button">
-          <img src="candidates/bernie/bernie_thumbnail.jpg"> Sanders
-        </div>
-        <div class="candidate-button">
-          <img src="candidates/trump/trump_thumbnail.jpg"> Trump
-        </div>
-         <div class="candidate-button">
-          <img src="candidates/paul/paul_thumbnail.jpg"> Trump
-        </div>
-        </div>
-        
-  
-       
+    <div class="header row">
+      <div class="col-md-1">
+        <img src="img/logo_republican.png" class="logo">
       </div>
-      <div class="col-xs-8 col-middle">
-        <div class="img-responsive" id="quote" style="width:600px;height:auto">
+      <div class="candidates col-md-11">
+        <div class="candidate-button republican" onClick="draw(0)">
+          <img src="candidates/trump/trump_thumbnail.jpg" class="hidden-xs"> Trump
         </div>
-        <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px">New Quote</button>
+        <div class="candidate-button republican">
+          <img src="candidates/bush/bush_thumbnail.jpg" class="hidden-xs"> Bush
+        </div>
+        <div class="candidate-button republican">
+          <img src="candidates/carson/carson_thumbnail.jpg" class="hidden-xs"> Carson
+        </div>
+        <div class="candidate-button democrat">
+          <img src="candidates/clinton/clinton_thumbnail.jpg" class="hidden-xs"> Clinton
+        </div>
+        <div class="candidate-button republican">
+          <img src="candidates/cruz/cruz_thumbnail.jpg" class="hidden-xs"> Cruz
+        </div>
+        <div class="candidate-button democrat">
+          <img src="candidates/omalley/omalley_thumbnail.jpg" class="hidden-xs"> O'Malley
+        </div>
+        <div class="candidate-button democrat" onClick="draw(1)">
+          <img src="candidates/bernie/bernie_thumbnail.jpg" class="hidden-xs"> Sanders
+        </div>
+
+        <div class="candidate-button">
+          <img src="candidates/paul/paul_thumbnail.jpg" class="hidden-xs"> Trump
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-2 col-left row">
+
+      </div>
+      <div class="col-sm-8 col-middle">
+        <div class="img-responsive" id="quote" style="width:550px;height:auto">
+        </div>
+        <div class="btn-group" role="group" aria-label="...">
+        <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px"><i class="fa fa-refresh"></i>&nbsp;Try Again</button>
+                <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px"><i class="fa fa-random"></i>&nbsp;Random</button>
+</div>
+
+
 
         </center>
       </div>
-      <div class="col-xs-2 col-right">
+      <div class="col-sm-2 col-right">
         <div class="share-button-box" onClick="postCanvasToFacebook()">
           <i class="fa fa-facebook-official"></i> Share
         </div>
@@ -75,15 +78,14 @@
         <div class="share-button-box">
           Imgur
         </div>
-        <div class="share-button-box">
-          <i class="fa fa-download"></i> Jpeg
+        <div class="share-button-box" onClick="downloadCanvas()">
+         <i class="fa fa-download"></i> Download
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- CQ Side -->
         <ins class="adsbygoogle" style="display:inline-block;width:120px;height:240px" data-ad-client="ca-pub-5457154328841199" data-ad-slot="5079022799"></ins>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
-
         </script>
       </div>
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

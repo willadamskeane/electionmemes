@@ -28,9 +28,8 @@ function draw(candidateIndex) {
       //       document.getElementById('defaultCanvas0').style.display='';
       //       document.getElementById('defaultCanvas0').className=' animated slideInDown';
       // },50);
-      if (!candidateIndex)
+      if (candidateIndex==null)
             candidateIndex = Math.floor(Math.random() * candidates.length);
-      candidateIndex = 0;
       console.log(candidateIndex);
       var candidate = candidates[candidateIndex];
       var candidateImage = candidate.images[Math.floor(Math.random() * candidate.images.length)];

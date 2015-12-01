@@ -51,7 +51,7 @@ var candidates = [
 				fileName: 'carson1.jpg',
 				captionX:80,
 				captionY:80,
-				captionWidth:300,
+				captionWidth:400,
 				captionHeight:1000,
 				textAlign:'left'
 			}
