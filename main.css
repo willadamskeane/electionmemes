@@ -22,16 +22,50 @@
 	border-bottom:1px solid #474763;
 	color:#fff;
 	padding:10px;
+	cursor:pointer;
+}
+
+.share-button-box:last-child {
+	border-bottom:0px;
+}
+
+.share-button-box:hover {
+	color:#474763;
 }
 
 .share-button-box i {
 	font-size:32px;
 	display:block;
+	
+}
+
+.logo {
+	width:250px;
+	height:auto;
+}
+
+.candidate-button {
+	padding:10px;
+	text-align:center;
+	border-bottom:1px solid #474763;
+}
+
+.candidate-button:last-child {
+	border-bottom:0px;
+}
+
+
+.candidate-button img {
+	width:50px;
+	height:50px;
+	border-radius:50%;
+	display:block;
+	margin:auto;
 }
 
 body {
-	background:#242440 !important;
-	
+	background:#00519a !important;
+	background:#d03227 !important;
 }
 
 .container {

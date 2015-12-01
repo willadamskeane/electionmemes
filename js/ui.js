@@ -1,3 +1,7 @@
+function preload() {
+      quoteFont = loadFont('fonts/chunkfive.otf');
+}
+
 function setup() {
       var myCanvas = createCanvas(1080, 1080);
       console.log(myCanvas);
@@ -5,12 +9,13 @@ function setup() {
       document.getElementById('defaultCanvas0').style.height = "auto";
       // document.getElementById('defaultCanvas0').style.display='none';
       myCanvas.parent('quote');
-      textSize(50);
-       stroke(5);
-       strokeJoin(ROUND);
+      textSize(60);
+      stroke(5);
+      strokeJoin(ROUND);
+      textFont(quoteFont);
       textStyle(BOLD);
       fill(color(255, 255, 255));
-     
+
       strokeWeight(10);
       noLoop();
       background(50);
@@ -25,6 +30,7 @@ function draw(candidateIndex) {
       // },50);
       if (!candidateIndex)
             candidateIndex = Math.floor(Math.random() * candidates.length);
+      candidateIndex = 0;
       console.log(candidateIndex);
       var candidate = candidates[candidateIndex];
       var candidateImage = candidate.images[Math.floor(Math.random() * candidate.images.length)];
@@ -32,10 +38,13 @@ function draw(candidateIndex) {
       var bg = loadImage('candidates/' + candidate.shortName + '/' + candidateImage.fileName, function () {
             image(bg, 0, 0);
             generateCaption(candidate, function (caption) {
-                  	window.history.pushState("object or string", "Title", "/electionmemes/index.html#"+btoa(encodeURIComponent(caption)));
-                        
+                  window.history.pushState("object or string", "Title", "/electionmemes/index.html#" + btoa(encodeURIComponent(caption)));
                   console.log(candidateImage);
-                        document.getElementById('defaultCanvas0').style.visibility = "";
+                  document.getElementById('defaultCanvas0').style.visibility = "";
+                  textSize(60);
+                  if (caption.length > 120) {
+                        textSize(60 - ((caption.length - 120)/4));
+                  }
                   text(caption, candidateImage.captionX, candidateImage.captionY, candidateImage.captionWidth, candidateImage.captionHeight);
             });
       });

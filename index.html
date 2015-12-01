@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="lib/font-awesome.min.css">
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="lib/p5.min.js"></script>
-<script src="lib/rita.min.js"></script>
+<script src="lib/rita-full.min.js"></script>
 <script src="js/candidates.js"></script>
 <script src="js/social.js"></script>
 <script src="js/nlp.js"></script>
@@ -19,55 +19,85 @@
 
 <body>
   <div class="container">
-    <h3>Candidate Quote</h3>
+    <img src="img/logo_republican.png" class="logo">
     <div class="row">
-      <div class="col-sm-2 col-left">
-         <div class="candidate-button">
+      <div class="col-xs-2 col-left row">
+        <div class="col-xs-6">
+                <div class="candidate-button">
+          <img src="candidates/bush/bush_thumbnail.jpg">
           Bush
         </div>
         <div class="candidate-button">
+          <img src="candidates/carson/carson_thumbnail.jpg">
           Carson
         </div>
         <div class="candidate-button">
-          Clinton
+          <img src="candidates/clinton/clinton_thumbnail.jpg"> Clinton
         </div>
         <div class="candidate-button">
+          <img src="candidates/cruz/cruz_thumbnail.jpg">
           Cruz
         </div>
-        <div class="candidate-button">
-          Sanders
+        </div>
+         <div class="col-xs-6">
+            <div class="candidate-button">
+          <img src="candidates/omalley/omalley_thumbnail.jpg">
+          O'Malley
         </div>
         <div class="candidate-button">
-          Trump
+          <img src="candidates/bernie/bernie_thumbnail.jpg"> Sanders
         </div>
+        <div class="candidate-button">
+          <img src="candidates/trump/trump_thumbnail.jpg"> Trump
+        </div>
+         <div class="candidate-button">
+          <img src="candidates/paul/paul_thumbnail.jpg"> Trump
+        </div>
+        </div>
+        
+  
+       
       </div>
-      <div class="col-sm-8 col-middle">
+      <div class="col-xs-8 col-middle">
         <div class="img-responsive" id="quote" style="width:600px;height:auto">
         </div>
         <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px">New Quote</button>
+
         </center>
       </div>
-      <div class="col-sm-2 col-right">
-        <div class="share-button-box">
-          <i class="fa fa-facebook-official"></i>
-          Share
+      <div class="col-xs-2 col-right">
+        <div class="share-button-box" onClick="postCanvasToFacebook()">
+          <i class="fa fa-facebook-official"></i> Share
         </div>
         <div class="share-button-box">
-          <i class="fa fa-twitter-square"></i>
-          Tweet
+          <i class="fa fa-twitter"></i> Tweet
         </div>
         <div class="share-button-box">
           Imgur
         </div>
         <div class="share-button-box">
-           <i class="fa fa-download"></i>
-          Jpeg
+          <i class="fa fa-download"></i> Jpeg
         </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- CQ Side -->
+        <ins class="adsbygoogle" style="display:inline-block;width:120px;height:240px" data-ad-client="ca-pub-5457154328841199" data-ad-slot="5079022799"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+
+        </script>
       </div>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Candidate Quote -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5457154328841199" data-ad-slot="6834957594" data-ad-format="auto"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
     </div>
+
     <!--<button onclick="postCanvasToFacebook()">Submit</button>-->
 
   </div>
+
 </body>
 
 

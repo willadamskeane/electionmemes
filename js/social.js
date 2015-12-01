@@ -25,7 +25,7 @@ window.fbAsyncInit = function () {
 };
 
 function postCanvasToFacebook() {
-    var canvas = document.getElementById('defaultCanvas');
+    var canvas = document.getElementById('defaultCanvas0');
     console.log(canvas);
     var data = canvas.toDataURL("image/png");
     var encodedPng = data.substring(data.indexOf(',') + 1, data.length);
@@ -48,7 +48,7 @@ function postCanvasToFacebook() {
 }
 
 function postImageToFacebook(authToken, na1, na2, na3, na4) {
-    var canvas = document.getElementById("defaultCanvas");
+    var canvas = document.getElementById("defaultCanvas0");
     var imageData = canvas.toDataURL("image/png");
     try {
         blob = dataURItoBlob(imageData);
