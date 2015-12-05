@@ -10,7 +10,9 @@ var candidates = [
 				captionY:700,
 				captionWidth:900,
 				captionHeight:400,
-				textAlign:'left'
+				textAlign:'left',
+				watermarkX:809,
+				watermarkY:1026
 			}
 		]
 	},
@@ -25,7 +27,9 @@ var candidates = [
 				captionY:200,
 				captionWidth:400,
 				captionHeight:1000,
-				textAlign:'right'
+				textAlign:'right',
+				watermarkX:0,
+				watermarkY:1026
 			}
 		]
 	},{
@@ -35,11 +39,13 @@ var candidates = [
 		images: [
 			{
 				fileName: 'clinton1.jpg',
-				captionX:400,
-				captionY:80,
-				captionWidth:600,
-				captionHeight:1000,
-				textAlign:'right'
+				captionX:80,
+				captionY:700,
+				captionWidth:920,
+				captionHeight:400,
+				textAlign:'left',
+				watermarkX:809,
+				watermarkY:0
 			}
 		]
 	},{
@@ -49,11 +55,23 @@ var candidates = [
 		images: [
 			{
 				fileName: 'carson1.jpg',
-				captionX:80,
+				captionX:550,
+				captionY:80,
+				captionWidth:450,
+				captionHeight:1000,
+				textAlign:'right',
+				watermarkX:0,
+				watermarkY:1026
+			},
+			{
+				fileName: 'carson2.jpg',
+				captionX:600,
 				captionY:80,
 				captionWidth:400,
 				captionHeight:1000,
-				textAlign:'left'
+				textAlign:'right',
+				watermarkX:0,
+				watermarkY:1026
 			}
 		]
 	},{
@@ -67,7 +85,9 @@ var candidates = [
 				captionY:80,
 				captionWidth:400,
 				captionHeight:1000,
-				textAlign:'left'
+				textAlign:'left',
+				watermarkX:0,
+				watermarkY:1026
 			}
 		]
 	},{
@@ -81,7 +101,50 @@ var candidates = [
 				captionY:80,
 				captionWidth:600,
 				captionHeight:1000,
-				textAlign:'right'
+				textAlign:'right',
+				watermarkX:0,
+				watermarkY:1026
+			},{
+				fileName: 'paul2.jpg',
+				captionX:80,
+				captionY:700,
+				captionWidth:900,
+				captionHeight:400,
+				textAlign:'left',
+				watermarkX:809,
+				watermarkY:1026
+			}
+		]
+	},{
+		name:'Jeb Bush',
+		shortName: 'bush',
+		party:'Republican',
+		images: [
+			{
+				fileName: 'bush1.jpg',
+				captionX:80,
+				captionY:80,
+				captionWidth:500,
+				captionHeight:1000,
+				textAlign:'left',
+				watermarkX:0,
+				watermarkY:1026
+			}
+		]
+	},{
+		name:'Martin O\'Malley',
+		shortName: 'omalley',
+		party:'Democrat',
+		images: [
+			{
+				fileName: 'omalley1.jpg',
+				captionX:550,
+				captionY:60,
+				captionWidth:450,
+				captionHeight:1000,
+				textAlign:'right',
+				watermarkX:0,
+				watermarkY:1026
 			}
 		]
 	}

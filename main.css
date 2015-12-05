@@ -53,6 +53,13 @@
 .logo {
 	height:100px;
 	width:auto;
+		border-radius:10px;
+	-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 .logo:hover {
@@ -63,6 +70,13 @@
 .candidates {
 	text-align:center;
 	margin:15px 0px 10px 0px;
+		border-radius:10px;
+	-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 .candidates div {
@@ -72,6 +86,13 @@
 	cursor:pointer !important;
 	font-family:bree;
 	position:relative;
+		border-radius:10px;
+	-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 .candidates div:hover {

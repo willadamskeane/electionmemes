@@ -50,10 +50,10 @@ function postCanvasToFacebook() {
 function postImageToImgur() {
     var canvas = document.getElementById("defaultCanvas0");
     try {
-    var img = canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
-} catch(e) {
-    var img = canvas.toDataURL().split(',')[1];
-}
+        var img = canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
+    } catch (e) {
+        var img = canvas.toDataURL().split(',')[1];
+    }
 
     // try {
     //     var img = dataURItoBlob(imageData);
@@ -77,7 +77,7 @@ function postImageToImgur() {
         success: function (response) {
             console.log(response);
             if (response.success) {
-                window.open(response.data.link);
+                location.replace(response.data.link);
             }
         }
     });
@@ -150,5 +150,5 @@ function dataURItoBlob(dataURI) {
 }
 
 function downloadCanvas() {
-    save('trump.jpg');
+    save(candidates[activeCandidate].shortName + '-quote.jpg');
 }
