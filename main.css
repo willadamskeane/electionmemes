@@ -10,6 +10,7 @@
 }
 
 .col-right {
+	text-align:left;
 	display:block;
 }
 
@@ -19,10 +20,11 @@
 
 .share-button-box {
 	text-align:center;
-	border-bottom:1px solid #474763;
+	
 	color:#fff;
 	padding:10px;
 	cursor:pointer;
+	font-family:bree;
 }
 
 .share-button-box:last-child {
@@ -30,13 +32,12 @@
 }
 
 .share-button-box:hover {
-	color:#474763;
+	color:rgba(255,255,255,.5);
 }
 
 .share-button-box i {
 	font-size:32px;
 	display:block;
-	
 }
 
 .header {
@@ -50,22 +51,30 @@
 
 .candidates {
 	text-align:center;
-	padding-top:10px;
+	margin:15px 0px 10px 0px;
 }
 
-@media(min-width:992px){
-		.candidates {
-			padding-top:0px;
-			text-align:right;
-		}
-	}
-
 .candidate-button {
-	padding:10px;
+	padding:5px 10px;
 	text-align:center;
 	display:inline-block;
 	cursor:pointer !important;
-	font-family:chunkFive;
+	font-family:bree;
+}
+
+.candidate-button:hover {
+	opacity:.7;
+}
+
+.candidate-button.active {
+	border-radius:5px;
+	background:rgba(255,255,255,.1);
+	opacity:1 !important;
+	cursor:default !important;
+}
+
+.candidate-button.active img {
+	
 }
 
 .candidate-button:last-child {
@@ -81,11 +90,12 @@
 	-webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5);
 	-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5);
 	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5);
-	border:3px solid #00519a;
+
 }
 
 .candidate-button img :active {
 	box-shadow: 0px !important;
+	
 }
 
 .democrat {
@@ -102,9 +112,18 @@
 }
 
 body {
-	background:#00519a !important;
-	background:#99251d !important;
+	background:#00396b !important;
+	/*background:#b32c22 !important;*/
 }
+
+body.democrat {
+	background:#004480 !important;
+}
+
+body.republican {
+	background:#b32c22 !important;
+}
+
 
 .container {
 	padding-top:20px;
@@ -121,7 +140,30 @@ body {
 	border-radius:10px;
 }
 
+.img-overlay {
+	position:absolute;
+	width:calc(100% - 30px);
+	height:100%;
+	background:rgba(255,255,255,.5);
+	border-radius:10px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:64px;
+  text-shadow: 2px 2px 2px rgba(0,0,0,.8);
+}
+
 @font-face {
     font-family: chunkFive;
     src: url(fonts/chunkfive.otf);
+}
+
+@font-face {
+    font-family: andada;
+    src: url(fonts/andada.otf);
+}
+
+@font-face {
+    font-family: bree;
+    src: url(fonts/bree.otf);
 }

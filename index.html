@@ -19,12 +19,12 @@
 
 <body>
   <div class="container">
-    <div class="header row">
-      <div class="col-md-1">
-        <img src="img/logo_republican.png" class="logo">
+    <div class="header">
+      <div>
+        <img src="img/logo_democrat.png" id="logo" class="logo">
       </div>
-      <div class="candidates col-md-11">
-        <div class="candidate-button republican" onClick="draw(0)">
+      <div class="candidates">
+        <div class="candidate-button republican active" onClick="draw(0)">
           <img src="candidates/trump/trump_thumbnail.jpg" class="hidden-xs"> Trump
         </div>
         <div class="candidate-button republican">
@@ -47,25 +47,29 @@
         </div>
 
         <div class="candidate-button">
-          <img src="candidates/paul/paul_thumbnail.jpg" class="hidden-xs"> Trump
+          <img src="candidates/paul/paul_thumbnail.jpg" class="hidden-xs"> Paul
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-2 col-left row">
-
+      <div class="col-sm-2 col-left hidden-xs">
+        <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-5457154328841199" data-ad-slot="9994756790"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>-->
       </div>
-      <div class="col-sm-8 col-middle">
+      <div class="col-sm-8 col-xs-12 col-middle">
         <div class="img-responsive" id="quote" style="width:550px;height:auto">
+          <div class="img-overlay">
+            <i class="fa fa-refresh"></i>
+          </div>
         </div>
-        <div class="btn-group" role="group" aria-label="...">
-        <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px"><i class="fa fa-refresh"></i>&nbsp;Try Again</button>
-                <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px"><i class="fa fa-random"></i>&nbsp;Random</button>
-</div>
-
-
-
+        <!--<div class="btn-group" role="group" aria-label="...">
+          <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px"><i class="fa fa-refresh"></i>&nbsp;Try Again</button>
+          <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px"><i class="fa fa-random"></i>&nbsp;Random</button>
+        </div>-->
         </center>
       </div>
       <div class="col-sm-2 col-right">
@@ -79,26 +83,35 @@
           Imgur
         </div>
         <div class="share-button-box" onClick="downloadCanvas()">
-         <i class="fa fa-download"></i> Download
+          <i class="fa fa-download"></i> Download
         </div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- CQ Side -->
+        <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle" style="display:inline-block;width:120px;height:240px" data-ad-client="ca-pub-5457154328841199" data-ad-slot="5079022799"></ins>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        </script>-->
       </div>
-      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- Candidate Quote -->
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5457154328841199" data-ad-slot="6834957594" data-ad-format="auto"></ins>
+      <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="ca-pub-5457154328841199" data-ad-slot="5145754796"></ins>
       <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
-      </script>
+      </script>-->
     </div>
 
     <!--<button onclick="postCanvasToFacebook()">Submit</button>-->
 
   </div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-576458-11', 'auto');
+  ga('send', 'pageview');
+
+  </script>
 
 </body>
 

@@ -32,6 +32,8 @@ function draw(candidateIndex) {
             candidateIndex = Math.floor(Math.random() * candidates.length);
       console.log(candidateIndex);
       var candidate = candidates[candidateIndex];
+      document.body.className=candidate.party;
+      document.getElementById('logo').src = 'img/logo_'+candidate.party+'.png';
       var candidateImage = candidate.images[Math.floor(Math.random() * candidate.images.length)];
       textAlign((candidateImage.textAlign == 'left' ? LEFT : RIGHT));
       var bg = loadImage('candidates/' + candidate.shortName + '/' + candidateImage.fileName, function () {
