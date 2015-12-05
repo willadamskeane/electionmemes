@@ -30,8 +30,22 @@ function draw(candidateIndex) {
       //       document.getElementById('defaultCanvas0').style.display='';
       //       document.getElementById('defaultCanvas0').className=' animated slideInDown';
       // },50);
+            
+      if (window.location.hash && candidateIndex==null){
+            var candidateName = window.location.hash.substring(1);
+            console.log(candidateName);
+            for (var i=0;i<candidates.length;i++){
+                  if (candidateName.toLowerCase() == candidates[i].shortName.toLowerCase()){
+                        
+                        candidateIndex = i;
+                        break;
+                  }
+            }
+      }
+      
       if (candidateIndex==null)
             candidateIndex = Math.floor(Math.random() * candidates.length);
+      
       var previousCandidate = candidates[activeCandidate];
       activeCandidate = candidateIndex;
       console.log(candidateIndex);
