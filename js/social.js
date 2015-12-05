@@ -60,12 +60,14 @@ function postImageToImgur() {
     // } catch (e) {
     //     console.log(e);
     // }
+    
+    
 
     $.ajax({
         url: 'https://api.imgur.com/3/image',
         type: 'post',
         headers: {
-            Authorization: 'Client-ID cec0a28bc5f2103'
+            Authorization: 'Client-ID fec6028335e2a26'
         },
         data: {
             image: img,
@@ -73,6 +75,7 @@ function postImageToImgur() {
         },
         dataType: 'json',
         success: function (response) {
+            console.log(response);
             if (response.success) {
                 window.open(response.data.link);
             }

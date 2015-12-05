@@ -1,10 +1,11 @@
 <html>
 <!-- Latest compiled and minified CSS -->
+<head>
 <link rel="stylesheet" href="main.css">
 <link rel="stylesheet" href="lib/bootstrap.min.css">
 <link rel="stylesheet" href="lib/animate.css">
 <link rel="stylesheet" href="lib/font-awesome.min.css">
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="lib/jquery-1.11.3.min.js"></script>
 <script src="lib/p5.min.js"></script>
 <script src="lib/rita-full.min.js"></script>
 <script src="js/candidates.js"></script>
@@ -12,10 +13,13 @@
 <script src="js/nlp.js"></script>
 <script src="js/ui.js"></script>
 
-<script>
-  // Convert a data URI to blob
+<meta name="description" 
+      content="Fresh quotes on demand, from your favorite presidential candidates!">
+<meta name="keywords" content="election, 2016, political, quotes, generator, funny, memes, share" />
 
-</script>
+<meta property="og:image" content="http://www.everyquotecounts.com/img/logo.jpg" />
+
+</head>
 
 <body>
   <div id="fb-root"></div>
@@ -34,29 +38,29 @@
       </div>
       <div class="candidates">
         <div class="active" id="trump" onClick="draw(0)">
-          <img src="candidates/trump/trump_thumbnail.jpg" class="hidden-xs"> Trump
+          <img src="candidates/trump/trump_thumbnail.jpg" > Trump
         </div>
         <div id="bush" class=" onClick="draw(1)">
-          <img src="candidates/bush/bush_thumbnail.jpg" class="hidden-xs"> Bush
+          <img src="candidates/bush/bush_thumbnail.jpg" > Bush
         </div>
         <div id="carson" class="" onClick="draw(3)">
-          <img src="candidates/carson/carson_thumbnail.jpg" class="hidden-xs"> Carson
+          <img src="candidates/carson/carson_thumbnail.jpg" > Carson
         </div>
         <div id="clinton" class="" onClick="draw(2)">
-          <img src="candidates/clinton/clinton_thumbnail.jpg" class="hidden-xs"> Clinton
+          <img src="candidates/clinton/clinton_thumbnail.jpg" > Clinton
         </div>
         <div id="cruz" class="" onClick="draw(4)">
-          <img src="candidates/cruz/cruz_thumbnail.jpg" class="hidden-xs"> Cruz
+          <img src="candidates/cruz/cruz_thumbnail.jpg" > Cruz
         </div>
         <div id="omalley" class="">
-          <img src="candidates/omalley/omalley_thumbnail.jpg" class="hidden-xs"> O'Malley
+          <img src="candidates/omalley/omalley_thumbnail.jpg" > O'Malley
         </div>
         <div id="bernie" class="" onClick="draw(1)">
-          <img src="candidates/bernie/bernie_thumbnail.jpg" class="hidden-xs"> Sanders
+          <img src="candidates/bernie/bernie_thumbnail.jpg" > Sanders
         </div>
 
         <div id="paul" class="" onClick="draw(5)">
-          <img src="candidates/paul/paul_thumbnail.jpg" class="hidden-xs"> Paul
+          <img src="candidates/paul/paul_thumbnail.jpg" > Paul
         </div>
       </div>
     </div>
@@ -70,7 +74,7 @@
         </script>-->
         <div class="col-left">
         </div>
-      <div class="col-middle">
+        <div class="col-middle">
         <div class="img-responsive" id="quote" style="width:550px;height:auto">
          
         </div>

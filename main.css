@@ -139,6 +139,7 @@ body.republican {
 	padding-top:20px;
 	text-align:center;
 	color:#fff;
+	min-width:800px !important;
 	max-width:970px !important;
 }
 
