@@ -7,15 +7,21 @@
 
 .col-left {
 	text-align:right;
+	width:100px;
+	display:inline-block;
 }
 
 .col-right {
 	text-align:left;
-	display:block;
+	display:inline-block;
+	width:100px;
 }
 
 .col-middle {
 	text-align: center;
+	display:inline-block;
+	vertical-align:top;
+	
 }
 
 .share-button-box {

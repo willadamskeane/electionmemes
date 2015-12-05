@@ -47,6 +47,56 @@ function postCanvasToFacebook() {
     });
 }
 
+function postImageToImgur() {
+    var canvas = document.getElementById("defaultCanvas0");
+    try {
+    var img = canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
+} catch(e) {
+    var img = canvas.toDataURL().split(',')[1];
+}
+
+    // try {
+    //     var img = dataURItoBlob(imageData);
+    // } catch (e) {
+    //     console.log(e);
+    // }
+
+    $.ajax({
+        url: 'https://api.imgur.com/3/image',
+        type: 'post',
+        headers: {
+            Authorization: 'Client-ID cec0a28bc5f2103'
+        },
+        data: {
+            image: img,
+            type: ''
+        },
+        dataType: 'json',
+        success: function (response) {
+            if (response.success) {
+                window.open(response.data.link);
+            }
+        }
+    });
+
+    // $.ajax({
+    //     url: 'https://api.imgur.com/3/image',
+    //     type: 'post',
+    //     headers: {
+    //         Authorization: 'Client-ID <CHANGE_THIS_TO_BE_YOUR_CLIENT_ID>'
+    //     },
+    //     data: {
+    //         image: img
+    //     },
+    //     dataType: 'json',
+    //     success: function (response) {
+    //         if (response.success) {
+    //             window.location = response.data.link;
+    //         }
+    //     }
+    // });
+}
+
 function postImageToFacebook(authToken, na1, na2, na3, na4) {
     var canvas = document.getElementById("defaultCanvas0");
     var imageData = canvas.toDataURL("image/png");
