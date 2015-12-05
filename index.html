@@ -20,33 +20,34 @@
 <body>
   <div class="container">
     <div class="header">
+      
       <div>
-        <img src="img/logo_democrat.png" id="logo" class="logo">
+        <img src="img/logo_democrat.png" id="logo" class="logo" onClick="draw()">
       </div>
       <div class="candidates">
-        <div class="candidate-button republican active" onClick="draw(0)">
+        <div class="active" id="trump" onClick="draw(0)">
           <img src="candidates/trump/trump_thumbnail.jpg" class="hidden-xs"> Trump
         </div>
-        <div class="candidate-button republican">
+        <div id="bush" class=" onClick="draw(1)">
           <img src="candidates/bush/bush_thumbnail.jpg" class="hidden-xs"> Bush
         </div>
-        <div class="candidate-button republican">
+        <div id="carson" class="" onClick="draw(3)">
           <img src="candidates/carson/carson_thumbnail.jpg" class="hidden-xs"> Carson
         </div>
-        <div class="candidate-button democrat">
+        <div id="clinton" class="" onClick="draw(2)">
           <img src="candidates/clinton/clinton_thumbnail.jpg" class="hidden-xs"> Clinton
         </div>
-        <div class="candidate-button republican">
+        <div id="cruz" class="" onClick="draw(4)">
           <img src="candidates/cruz/cruz_thumbnail.jpg" class="hidden-xs"> Cruz
         </div>
-        <div class="candidate-button democrat">
+        <div id="omalley" class="">
           <img src="candidates/omalley/omalley_thumbnail.jpg" class="hidden-xs"> O'Malley
         </div>
-        <div class="candidate-button democrat" onClick="draw(1)">
+        <div id="bernie" class="" onClick="draw(1)">
           <img src="candidates/bernie/bernie_thumbnail.jpg" class="hidden-xs"> Sanders
         </div>
 
-        <div class="candidate-button">
+        <div id="paul" class="" onClick="draw(5)">
           <img src="candidates/paul/paul_thumbnail.jpg" class="hidden-xs"> Paul
         </div>
       </div>
@@ -62,9 +63,7 @@
       </div>
       <div class="col-sm-8 col-xs-12 col-middle">
         <div class="img-responsive" id="quote" style="width:550px;height:auto">
-          <div class="img-overlay">
-            <i class="fa fa-refresh"></i>
-          </div>
+         
         </div>
         <!--<div class="btn-group" role="group" aria-label="...">
           <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px"><i class="fa fa-refresh"></i>&nbsp;Try Again</button>
@@ -80,6 +79,7 @@
           <i class="fa fa-twitter"></i> Tweet
         </div>
         <div class="share-button-box">
+          <i class="fa fa-picture-o"></i>
           Imgur
         </div>
         <div class="share-button-box" onClick="downloadCanvas()">

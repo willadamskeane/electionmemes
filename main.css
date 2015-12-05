@@ -49,40 +49,42 @@
 	width:auto;
 }
 
+.logo:hover {
+	opacity:.7;
+	cursor:pointer;
+}
+
 .candidates {
 	text-align:center;
 	margin:15px 0px 10px 0px;
 }
 
-.candidate-button {
+.candidates div {
 	padding:5px 10px;
 	text-align:center;
 	display:inline-block;
 	cursor:pointer !important;
 	font-family:bree;
+	position:relative;
 }
 
-.candidate-button:hover {
+.candidates div:hover {
 	opacity:.7;
 }
 
-.candidate-button.active {
+.candidates div.active {
 	border-radius:5px;
 	background:rgba(255,255,255,.1);
 	opacity:1 !important;
-	cursor:default !important;
 }
 
-.candidate-button.active img {
-	
-}
 
-.candidate-button:last-child {
+.candidates div:last-child {
 	border-bottom:0px;
 }
 
 
-.candidate-button img {
+.candidates div img {
 	width:50px;
 	height:50px;
 	border-radius:50%;
@@ -93,7 +95,7 @@
 
 }
 
-.candidate-button img :active {
+.candidates div img :active {
 	box-shadow: 0px !important;
 	
 }
@@ -113,6 +115,8 @@
 
 body {
 	background:#00396b !important;
+	transition: background-color .2s;
+	padding-bottom:20px;
 	/*background:#b32c22 !important;*/
 }
 
@@ -138,20 +142,49 @@ body.republican {
 
 #defaultCanvas0 {
 	border-radius:10px;
+	-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 .img-overlay {
 	position:absolute;
-	width:calc(100% - 30px);
-	height:100%;
-	background:rgba(255,255,255,.5);
-	border-radius:10px;
+	width:50px;
+	height:50px;
+	top:0px;
+	left:0px;
+	border-radius:50%;
+	background:rgba(255,255,255,.3);
 	display: flex;
   align-items: center;
   justify-content: center;
   font-size:64px;
   text-shadow: 2px 2px 2px rgba(0,0,0,.8);
+  opacity:0;
+  transition: opacity .1s;
+  -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
+
+.img-overlay:hover {
+	opacity:1;
+	cursor:pointer;
+}
+
+.img-overlay::selection{ background-color: transparent;}
+.img-overlay::moz-selection{ background-color: transparent;}
+.img-overlay::webkit-selection{ background-color: transparent;}
+
+.img-responsive::selection{ background-color: transparent;}
+.img-responsive::moz-selection{ background-color: transparent;}
+.img-responsive::webkit-selection{ background-color: transparent;}
 
 @font-face {
     font-family: chunkFive;

@@ -1,3 +1,5 @@
+var activeCandidate = 0;
+
 function preload() {
       quoteFont = loadFont('fonts/chunkfive.otf');
 }
@@ -30,10 +32,22 @@ function draw(candidateIndex) {
       // },50);
       if (candidateIndex==null)
             candidateIndex = Math.floor(Math.random() * candidates.length);
+      var previousCandidate = candidates[activeCandidate];
+      activeCandidate = candidateIndex;
       console.log(candidateIndex);
       var candidate = candidates[candidateIndex];
       document.body.className=candidate.party;
       document.getElementById('logo').src = 'img/logo_'+candidate.party+'.png';
+      
+      if (previousCandidate != activeCandidate){
+            document.getElementById(previousCandidate.shortName).className = '';
+      }
+      
+      window.history.pushState("object or string", "Title", '#'+candidate.shortName);
+                
+                        
+      document.getElementById(candidate.shortName).className = 'active';
+      console.log(document.getElementById('candidate_'+candidateIndex));
       var candidateImage = candidate.images[Math.floor(Math.random() * candidate.images.length)];
       textAlign((candidateImage.textAlign == 'left' ? LEFT : RIGHT));
       var bg = loadImage('candidates/' + candidate.shortName + '/' + candidateImage.fileName, function () {
@@ -44,7 +58,10 @@ function draw(candidateIndex) {
                   document.getElementById('defaultCanvas0').style.visibility = "";
                   textSize(60);
                   if (caption.length > 120) {
-                        textSize(60 - ((caption.length - 120)/4));
+                        var fontSize = 60 - ((caption.length - 120)/4);
+                        if (fontSize<40)
+                              fontSize=40;
+                        textSize(fontSize);
                   }
                   text(caption, candidateImage.captionX, candidateImage.captionY, candidateImage.captionWidth, candidateImage.captionHeight);
             });
