@@ -48,6 +48,9 @@ function postCanvasToFacebook() {
 }
 
 function postImageToImgur() {
+    analytics.track('Shared', {
+        type: 'Imgur'
+    });
     var canvas = document.getElementById("defaultCanvas0");
     try {
         var img = canvas.toDataURL('image/jpeg', 0.9).split(',')[1];
@@ -150,5 +153,21 @@ function dataURItoBlob(dataURI) {
 }
 
 function downloadCanvas() {
+    analytics.track('Shared', {
+        type: 'Download'
+    });
     save(candidates[activeCandidate].shortName + '-quote.jpg');
+}
+
+function shareTwitter() {
+
+    window.open("https://twitter.com/share?url=" + escape(window.location.href) + "&text=I can't believe what "+candidates[activeCandidate].name+' said! #everyquotecounts', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600'); return false;
+
+}
+
+function shareFacebook(){
+    
+      window.open("https://www.facebook.com/sharer/sharer.php?u="+escape(window.location.href)+"&t=I can't believe what "+candidates[activeCandidate].name+' said! #everyquotecounts', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;
+
+    
 }

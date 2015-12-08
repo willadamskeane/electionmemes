@@ -33,20 +33,28 @@ function draw(candidateIndex) {
       // },50);
             
       if (window.location.hash && candidateIndex == null) {
-            var candidateName = window.location.hash.substring(1);
-            console.log(candidateName);
-            for (var i = 0; i < candidates.length; i++) {
-                  if (candidateName.toLowerCase() == candidates[i].shortName.toLowerCase()) {
-
-                        candidateIndex = i;
-                        break;
+            if (window.location.hash.substr(1, 1) == '_') {
+                  var decodedData = JSON.parse(decodeURIComponent(atob(window.location.hash.substr(2))));
+                  console.log('decoded data',decodedData);
+                  candidateIndex = decodedData.c;
+                  var candidateImageIndex = decodedData.i;
+                  var savedCaption = decodedData.t;
+            } else {
+                  var candidateName = window.location.hash.substring(1);
+                  console.log(candidateName);
+                  for (var i = 0; i < candidates.length; i++) {
+                        if (candidateName.toLowerCase() == candidates[i].shortName.toLowerCase()) {
+                              candidateIndex = i;
+                              break;
+                        }
                   }
             }
       }
 
       if (candidateIndex == null)
             candidateIndex = 0;
-      // candidateIndex = Math.floor(Math.random() * candidates.length);
+      if (candidateIndex == -1)
+         candidateIndex = Math.floor(Math.random() * candidates.length);
 
       var previousCandidate = candidates[activeCandidate];
       activeCandidate = candidateIndex;
@@ -59,15 +67,18 @@ function draw(candidateIndex) {
             document.getElementById(previousCandidate.shortName).className = '';
       }
 
-      window.history.pushState("object or string", "Title", '#' + candidate.shortName);
+      // window.history.pushState("object or string", "Title", '#' + candidate.shortName);
 
+      analytics.track('Generated', {
+            candidate: candidate.name
+      });
 
       document.getElementById(candidate.shortName).className = 'active';
       console.log(document.getElementById('candidate_' + candidateIndex));
-      var candidateImage = candidate.images[Math.floor(Math.random() * candidate.images.length)];
+      if (!candidateImageIndex)
+            var candidateImageIndex = Math.floor(Math.random() * candidate.images.length);
+      var candidateImage = candidate.images[candidateImageIndex];
       textAlign((candidateImage.textAlign == 'left' ? LEFT : RIGHT));
-
-
 
       var bg = loadImage('candidates/' + candidate.shortName + '/' + candidateImage.fileName, function () {
             tint(255, 255);
@@ -77,9 +88,28 @@ function draw(candidateIndex) {
                   image(watermark, candidateImage.watermarkX, candidateImage.watermarkY);
 
             });
+
             generateCaption(candidate, function (caption) {
                   // window.history.pushState("object or string", "Title", "/electionmemes/index.html#" + btoa(encodeURIComponent(caption)));
-                  console.log(candidateImage);
+
+                  if (savedCaption)
+                        caption = savedCaption;
+
+                  var encodedData = btoa(encodeURIComponent(JSON.stringify({
+                        c: candidateIndex,
+                        i: candidateImageIndex,
+                        t: caption
+                  })));
+
+                  window.history.pushState("object or string", "Title", '#_' + encodedData);
+
+                  console.log(encodedData);
+
+                  var decodedData = JSON.parse(decodeURIComponent(atob(encodedData)));
+
+                  console.log(decodedData);
+
+
                   document.getElementById('defaultCanvas0').style.visibility = "";
                   textSize(60);
                   if (caption.length > 120) {

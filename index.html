@@ -1,67 +1,87 @@
 <html>
 <!-- Latest compiled and minified CSS -->
+
 <head>
   <title>Every Quote Counts!</title>
-<link rel="stylesheet" href="main.css">
-<link rel="stylesheet" href="lib/bootstrap.min.css">
-<link rel="stylesheet" href="lib/animate.css">
-<link rel="stylesheet" href="lib/font-awesome.min.css">
-<script src="lib/jquery-1.11.3.min.js"></script>
-<script src="lib/p5.min.js"></script>
-<script src="lib/rita-full.min.js"></script>
-<script src="js/candidates.js"></script>
-<script src="js/social.js"></script>
-<script src="js/nlp.js"></script>
-<script src="js/ui.js"></script>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/animate.css">
+  <link rel="stylesheet" href="lib/font-awesome.min.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <script src="lib/jquery-1.11.3.min.js"></script>
+  <script src="lib/p5.min.js"></script>
+  <script src="lib/rita-full.min.js"></script>
+  <script src="js/candidates.js"></script>
+  <script src="js/social.js"></script>
+  <script src="js/nlp.js"></script>
+  <script src="js/ui.js"></script>
 
-<meta name="description" 
-      content="Fresh quotes on demand, from your favorite presidential candidates!">
-<meta name="keywords" content="election, 2016, political, quotes, generator, funny, memes, share" />
+  <meta name="description" content="Fresh quotes on demand, from your favorite presidential candidates!">
+  <meta name="keywords" content="election, 2016, political, quotes, generator, funny, memes, share" />
 
-<meta property="og:image" content="http://www.everyquotecounts.com/img/logo.jpg" />
+  <meta property="og:image" content="http://www.everyquotecounts.com/img/logo.jpg" />
 
 </head>
 
 <body>
   <div id="fb-root"></div>
-<script>(function(d, s, id) {
+  <script>
+    (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1684804195065104";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));
+  </script>
   <div class="container">
     <div class="header">
-      
+
       <div>
-        <img src="img/logo_republican.png" id="logo" class="logo" onClick="draw()">
+        <img src="img/logo_republican.png" id="logo" class="logo" onClick="draw(-1)">
       </div>
       <div class="candidates">
         <div class="active" id="trump" onClick="draw(0)">
-          <img src="candidates/trump/trump_thumbnail.jpg" > Trump
+          <img src="candidates/trump/trump_thumbnail.jpg"> Trump
         </div>
         <div id="bush" class="" onClick="draw(6)">
-          <img src="candidates/bush/bush_thumbnail.jpg" > Bush
+          <img src="candidates/bush/bush_thumbnail.jpg"> Bush
         </div>
         <div id="carson" class="" onClick="draw(3)">
-          <img src="candidates/carson/carson_thumbnail.jpg" > Carson
+          <img src="candidates/carson/carson_thumbnail.jpg"> Carson
         </div>
         <div id="clinton" class="" onClick="draw(2)">
-          <img src="candidates/clinton/clinton_thumbnail.jpg" > Clinton
+          <img src="candidates/clinton/clinton_thumbnail.jpg"> Clinton
         </div>
         <div id="cruz" class="" onClick="draw(4)">
-          <img src="candidates/cruz/cruz_thumbnail.jpg" > Cruz
+          <img src="candidates/cruz/cruz_thumbnail.jpg"> Cruz
         </div>
         <div id="omalley" class="" onClick="draw(7)">
-          <img src="candidates/omalley/omalley_thumbnail.jpg" > O'Malley
+          <img src="candidates/omalley/omalley_thumbnail.jpg"> O'Malley
         </div>
         <div id="bernie" class="" onClick="draw(1)">
-          <img src="candidates/bernie/bernie_thumbnail.jpg" > Sanders
+          <img src="candidates/bernie/bernie_thumbnail.jpg"> Sanders
         </div>
 
         <div id="paul" class="" onClick="draw(5)">
-          <img src="candidates/paul/paul_thumbnail.jpg" > Paul
+          <img src="candidates/paul/paul_thumbnail.jpg"> Paul
         </div>
       </div>
     </div>
@@ -73,11 +93,11 @@
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
         </script>-->
-        <div class="col-left">
-        </div>
-        <div class="col-middle">
+      <div class="col-left">
+      </div>
+      <div class="col-middle">
         <div class="img-responsive" id="quote" style="width:550px;height:auto">
-         
+
         </div>
         <!--<div class="btn-group" role="group" aria-label="...">
           <button class="btn btn-danger" onclick="draw()" style="width:200px;height:40px"><i class="fa fa-refresh"></i>&nbsp;Try Again</button>
@@ -92,21 +112,22 @@
         <div class="share-button-box">
           <i class="fa fa-twitter"></i> Tweet
         </div>-->
-         <div class="share-button-box" onClick="downloadCanvas()">
+        <div class="share-button-box" onClick="shareTwitter()">
+          <i class="fa fa-twitter"></i> Twitter
+        </div>
+        <div class="share-button-box" onClick="shareFacebook()">
+          <i class="fa fa-facebook-official"></i> Facebook
+        </div>
+
+        <div class="share-button-box" onClick="postImageToImgur()">
+          <i class="fa fa-picture-o"></i> Imgur
+        </div>
+
+        <div class="share-button-box" onClick="downloadCanvas()">
           <i class="fa fa-download"></i> Download
         </div>
-        <div class="share-button-box" onClick="postImageToImgur()">
-          <i class="fa fa-picture-o"></i>
-          Imgur
-        </div>
-       
-        <div class="share-button-box">
-          <div class="fb-share-button" data-href="http://www.everyquotecounts.com" data-layout="box_count"></div>
-        </div>
-        <div class="share-button-box">
-<a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="http://www.everyquotecounts.com" data-via="everyquotecount" data-size="large">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-        </div>
+
+
         <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle" style="display:inline-block;width:120px;height:240px" data-ad-client="ca-pub-5457154328841199" data-ad-slot="5079022799"></ins>
         <script>
@@ -114,20 +135,20 @@
         </script>-->
       </div>
       <!--<div class="col-sm-2 col-right">-->
-        <!--<div class="share-button-box" onClick="postCanvasToFacebook()">
+      <!--<div class="share-button-box" onClick="postCanvasToFacebook()">
           <i class="fa fa-facebook-official"></i> Share
         </div>
         <div class="share-button-box">
           <i class="fa fa-twitter"></i> Tweet
         </div>-->
-        <!--<div class="share-button-box">
+      <!--<div class="share-button-box">
           <i class="fa fa-picture-o"></i>
           Imgur
         </div>
         <div class="share-button-box" onClick="downloadCanvas()">
           <i class="fa fa-download"></i> Download
         </div>-->
-        <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle" style="display:inline-block;width:120px;height:240px" data-ad-client="ca-pub-5457154328841199" data-ad-slot="5079022799"></ins>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
@@ -144,15 +165,11 @@
 
   </div>
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-576458-11', 'auto');
-  ga('send', 'pageview');
-
+  <script type="text/javascript">
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+analytics.load("PiETwBAyVOf6Qp0oWX2xqDletbiMIbCl");
+analytics.page()
+}}();
   </script>
 
 </body>

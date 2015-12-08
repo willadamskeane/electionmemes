@@ -13,6 +13,16 @@ var candidates = [
 				textAlign:'left',
 				watermarkX:809,
 				watermarkY:1026
+			},
+			{
+				fileName: 'trump2.jpg',
+				captionX:80,
+				captionY:700,
+				captionWidth:900,
+				captionHeight:400,
+				textAlign:'left',
+				watermarkX:809,
+				watermarkY:1026
 			}
 		]
 	},
