@@ -178,6 +178,10 @@ body.republican {
 user-select: none;
 }
 
+#p5_loading {
+	display:none;
+}
+
 .img-overlay {
 	position:absolute;
 	width:50px;

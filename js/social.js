@@ -160,13 +160,17 @@ function downloadCanvas() {
 }
 
 function shareTwitter() {
-
+ analytics.track('Shared', {
+        type: 'Twitter'
+    });
     window.open("https://twitter.com/share?url=" + escape(window.location.href) + "&text=I can't believe what "+candidates[activeCandidate].name+' said! #everyquotecounts', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600'); return false;
 
 }
 
 function shareFacebook(){
-    
+     analytics.track('Shared', {
+        type: 'Facebook'
+    });
       window.open("https://www.facebook.com/sharer/sharer.php?u="+escape(window.location.href)+"&t=I can't believe what "+candidates[activeCandidate].name+' said! #everyquotecounts', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;
 
     
