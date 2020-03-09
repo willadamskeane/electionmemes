@@ -1,234 +1,283 @@
 #quote {
-	width:600px;
-	height:600px;
-	text-align:center;
-	margin:auto;
+  width: 600px;
+  height: 600px;
+  text-align: center;
+  margin: auto;
 }
 
 .col-left {
-	text-align:right;
-	width:100px;
-	display:inline-block;
+  text-align: right;
+  width: 100px;
+  display: inline-block;
 }
 
 .col-right {
-	text-align:left;
-	display:inline-block;
-	width:100px;
+  text-align: left;
+  display: inline-block;
+  width: 100px;
+  margin-top: 68px;
+  visibility: hidden;
 }
 
 .col-middle {
-	text-align: center;
-	display:inline-block;
-	vertical-align:top;
-	
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .share-button-box {
-	text-align:center;
-	
-	color:#fff;
-	padding:10px;
-	cursor:pointer;
-	font-family:bree;
+  text-align: center;
+
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  font-family: bree;
 }
 
 .share-button-box:last-child {
-	border-bottom:0px;
+  border-bottom: 0px;
 }
 
 .share-button-box:hover {
-	color:rgba(255,255,255,.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .share-button-box i {
-	font-size:32px;
-	display:block;
+  font-size: 32px;
+  display: block;
 }
 
 .header {
-	padding-bottom:10px;
+  padding-bottom: 10px;
 }
 
 .logo {
-	height:100px;
-	width:auto;
-		border-radius:10px;
-	-webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+  height: 100px;
+  width: auto;
+  border-radius: 10px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .logo:hover {
-	opacity:.7;
-	cursor:pointer;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .candidates {
-	text-align:center;
-	margin:15px 0px 10px 0px;
-		border-radius:10px;
-	-webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+  display: none;
+  text-align: center;
+  margin: 15px 0px 10px 0px;
+  border-radius: 10px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .candidates div {
-	padding:5px 10px;
-	text-align:center;
-	display:inline-block;
-	cursor:pointer !important;
-	font-family:bree;
-	position:relative;
-		border-radius:10px;
-	-webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+  padding: 5px 10px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer !important;
+  font-family: bree;
+  position: relative;
+  border-radius: 10px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .candidates div:hover {
-	opacity:.7;
+  opacity: 0.7;
 }
 
 .candidates div.active {
-	border-radius:5px;
-	background:rgba(255,255,255,.1);
-	opacity:1 !important;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 1 !important;
 }
-
 
 .candidates div:last-child {
-	border-bottom:0px;
+  border-bottom: 0px;
 }
 
-
 .candidates div img {
-	width:50px;
-	height:50px;
-	border-radius:50%;
-	display:block;
-	-webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5);
-	-moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5);
-	box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.5);
-
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
 .candidates div img :active {
-	box-shadow: 0px !important;
-	
+  box-shadow: 0px !important;
 }
 
 .democrat {
-	border-color:#00519a;
+  border-color: #00519a;
 }
 
 .republican img {
-	border-color:#d03227 !important;
+  border-color: #d03227 !important;
 }
 
 .btn {
-	font-family:chunkFive;
-	font-size:24px !important;
+  font-family: chunkFive;
+  font-size: 24px !important;
 }
 
 body {
-	background:#b32c22 !important;
-	transition: background-color .2s;
-	padding-bottom:20px;
-	/*background:#b32c22 !important;*/
+  background: #b32c22 !important;
+  transition: background-color 0.2s;
+  padding-bottom: 20px;
+  /*background:#b32c22 !important;*/
 }
 
 body.democrat {
-	background:#004480 !important;
+  background: #004480 !important;
 }
 
 body.republican {
-	background:#b32c22 !important;
+  background: #b32c22 !important;
 }
 
-
 .container {
-	padding-top:20px;
-	text-align:center;
-	color:#fff;
-	min-width:800px !important;
-	max-width:970px !important;
+  padding-top: 20px;
+  text-align: center;
+  color: #fff;
+  min-width: 800px !important;
+  max-width: 970px !important;
 }
 
 .btn {
-	margin-top:10px;
+  margin-top: 10px;
 }
 
 #defaultCanvas0 {
-	border-radius:10px;
-	-webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+  border-radius: 10px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #p5_loading {
-	display:none;
+  display: none;
 }
 
 .img-overlay {
-	position:absolute;
-	width:50px;
-	height:50px;
-	top:0px;
-	left:0px;
-	border-radius:50%;
-	background:rgba(255,255,255,.3);
-	display: flex;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size:64px;
-  text-shadow: 2px 2px 2px rgba(0,0,0,.8);
-  opacity:0;
-  transition: opacity .1s;
+  font-size: 64px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.1s;
   -webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .img-overlay:hover {
-	opacity:1;
-	cursor:pointer;
+  opacity: 1;
+  cursor: pointer;
 }
 
-.img-overlay::selection{ background-color: transparent;}
-.img-overlay::moz-selection{ background-color: transparent;}
-.img-overlay::webkit-selection{ background-color: transparent;}
+.img-overlay::selection {
+  background-color: transparent;
+}
+.img-overlay::moz-selection {
+  background-color: transparent;
+}
+.img-overlay::webkit-selection {
+  background-color: transparent;
+}
 
-.img-responsive::selection{ background-color: transparent;}
-.img-responsive::moz-selection{ background-color: transparent;}
-.img-responsive::webkit-selection{ background-color: transparent;}
+.img-responsive::selection {
+  background-color: transparent;
+}
+.img-responsive::moz-selection {
+  background-color: transparent;
+}
+.img-responsive::webkit-selection {
+  background-color: transparent;
+}
 
-@font-face {
-    font-family: chunkFive;
-    src: url(fonts/chunkfive.otf);
+.prefix {
+  width: 550px;
+  margin-bottom: 16px;
+  margin-top: 8px;
+}
+
+.prefix .btn {
+  margin-top: 0px;
+}
+
+#prefix {
+  height: 48px;
+  font-size: 18px;
+  font-family: bree;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: none;
+  color: #fff !important;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#prefix::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 @font-face {
-    font-family: andada;
-    src: url(fonts/andada.otf);
+  font-family: chunkFive;
+  src: url(fonts/chunkfive.otf);
 }
 
 @font-face {
-    font-family: bree;
-    src: url(fonts/bree.otf);
+  font-family: andada;
+  src: url(fonts/andada.otf);
+}
+
+@font-face {
+  font-family: bree;
+  src: url(fonts/bree.otf);
+}
+
+.progress {
+  position: absolute;
+  top: 0px;
+  width: 550px;
+  height: 48px !important;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+
+#generate {
+  background: #00519a;
+  border-color: #004480;
+  color: #fff;
 }
