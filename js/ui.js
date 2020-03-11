@@ -83,9 +83,10 @@ function draw(candidateIndex, shouldGenerateCaption) {
   }
 
   // window.history.pushState("object or string", "Title", '#' + candidate.shortName);
-
-  analytics.track("Generated", {
-    candidate: candidate.name
+  ga("send", {
+    hitType: "event",
+    eventAction: "generate",
+    eventLabel: "Generated " + candidate.name
   });
 
   document.getElementById(candidate.shortName).className = "active";
