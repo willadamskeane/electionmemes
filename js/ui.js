@@ -83,11 +83,11 @@ function draw(candidateIndex, shouldGenerateCaption) {
   }
 
   // window.history.pushState("object or string", "Title", '#' + candidate.shortName);
-  ga("send", {
-    hitType: "event",
-    eventAction: "generate",
-    eventLabel: "Generated " + candidate.name
-  });
+  // window.ga("send", {
+  //   hitType: "event",
+  //   eventAction: "generate",
+  //   eventLabel: "Generated " + candidate.name
+  // });
 
   document.getElementById(candidate.shortName).className = "active";
   console.log(document.getElementById("candidate_" + candidateIndex));
